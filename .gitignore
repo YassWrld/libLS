@@ -2,5 +2,4 @@ bin
 lib
 test
 makefile
-.gitignore
-.vscode
+vscode
