@@ -19,6 +19,10 @@ void insertLast(Pnode *head, int data);
 void insertAfter(Pnode prevNode, int data);
 void insertBefore(Pnode *head, Pnode targetNode, int data);
 
+// Deletion functions
+void deleteFirst(Pnode *head);
+void deleteLast(Pnode *head);
+
 // Utility functions
 int getSize(Pnode head);
 void printLinkedList(Pnode head);

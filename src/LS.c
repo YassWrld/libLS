@@ -91,6 +91,46 @@ void insertBefore(Pnode *head, Pnode targetNode, int data)
     }
 }
 
+// Deletion functions
+void deleteFirst(Pnode *head)
+{
+    if (*head == NULL)
+    {
+        fprintf(stderr, "List is already empty. Cannot delete.\n");
+        return;
+    }
+
+    Pnode temp = *head;
+    *head = (*head)->next;
+    free(temp);
+}
+void deleteLast(Pnode *head)
+{
+    if (*head == NULL)
+    {
+        fprintf(stderr, "List is already empty. Cannot delete.\n");
+        return;
+    }
+
+    if ((*head)->next == NULL)
+    {
+        // If there's only one node in the list, delete it
+        free(*head);
+        *head = NULL;
+        return;
+    }
+
+    Pnode current = *head;
+    while (current->next->next != NULL)
+    {
+        current = current->next;
+    }
+
+    free(current->next);
+    current->next = NULL;
+}
+
+// Utility functions
 int getSize(Pnode head)
 {
     int count = 0;
