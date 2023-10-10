@@ -35,7 +35,7 @@ void insertLast(Pnode *head, int data)
     else
     {
         Pnode current = *head;
-        while (current->next != head)
+        while (current->next != *head)
         {
             current = current->next;
         }
@@ -59,7 +59,7 @@ void insertAfter(Pnode prevNode, int data)
 
 void insertBefore(Pnode *head, Pnode targetNode, int data)
 {
-    if (*head = NULL)
+    if (*head != NULL)
     {
         fprintf(stderr, "List is empty. Cannot insert before.\n");
         return;
@@ -88,5 +88,25 @@ void insertBefore(Pnode *head, Pnode targetNode, int data)
         {
             fprintf(stderr, "Target node not found in the list.\n");
         }
-        }
+    }
+}
+
+int getSize(Pnode head)
+{
+    int count = 0;
+    while (head != NULL)
+    {
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+void printLinkedList(Pnode head)
+{
+    while (head != NULL)
+    {
+        printf("%d\n", head->data);
+        head = head->next;
+    }
 }
