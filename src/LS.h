@@ -22,6 +22,7 @@ void insertBefore(Pnode *head, Pnode targetNode, int data);
 // Deletion functions
 void deleteFirst(Pnode *head);
 void deleteLast(Pnode *head);
+void deleteAfter(Pnode prevNode);
 
 // Utility functions
 int getSize(Pnode head);

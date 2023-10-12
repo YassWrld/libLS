@@ -104,6 +104,7 @@ void deleteFirst(Pnode *head)
     *head = (*head)->next;
     free(temp);
 }
+
 void deleteLast(Pnode *head)
 {
     if (*head == NULL)
@@ -128,6 +129,19 @@ void deleteLast(Pnode *head)
 
     free(current->next);
     current->next = NULL;
+}
+
+void deleteAfter(Pnode prevNode)
+{
+    if (prevNode == NULL || prevNode->next == NULL)
+    {
+        fprintf(stderr, "Cannot delete after the specified node.\n");
+        return;
+    }
+
+    Pnode temp = prevNode->next;
+    prevNode->next = temp->next;
+    free(temp);
 }
 
 // Utility functions
