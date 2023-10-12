@@ -28,6 +28,7 @@ void insertFirst(Pnode *head, int data)
 void insertLast(Pnode *head, int data)
 {
     Pnode new = createNode(data);
+    new->next = NULL; // Explicitly set the next pointer to NULL
     if (*head == NULL)
     {
         *head = new;
@@ -35,7 +36,7 @@ void insertLast(Pnode *head, int data)
     else
     {
         Pnode current = *head;
-        while (current->next != *head)
+        while (current->next != NULL)
         {
             current = current->next;
         }
